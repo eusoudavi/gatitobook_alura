@@ -71,3 +71,22 @@ Para utilizarmos essas biblioteca, vamos no arquivo `angular.json` e acrescentam
 "./node_modules/bootstrap/dist/css/bootstrap.min.css",
 "./node_modules/font-awesome/css/font-awesome.css"
 ```
+
+### Criando feature module
+
+Com o comando abaixo, criamos os módulos principais do front
+~~~~
+ng generate module home --routing
+~~~~
+
+Com o comando abaixo, criamos os componentes do Angular para o nosso projeto:
+~~~~
+ng generate component home
+~~~~
+
+Dessa forma, criamos uma estrutura dentro da pasta `./gatitobook/src/app/home` para desenvolvermos a página home da nossa aplicação.
+
+Primeiramente foi criado os arquivos `home-routing.module.ts` onde tem as rotas do nosso projeto e o arquivo `home.module.ts`, que foi alterado quando criamos o componente do projeto, pois o componente precisa ser declarado no módulo.
+
+Depois, foi criado os componentes de CSS, HTML, TS e .SPEC.TS (para elaboração dos testes).
+
