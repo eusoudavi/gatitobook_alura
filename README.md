@@ -130,3 +130,7 @@ Assim, vamos criar primeiro o módulo de autenticação com o comando `ng genera
 
 Na service, vamos criar um método que irá fazer um POST ao back-end com um JSON contendo usuário e senha.
 
+### Redirecionanemnto de rotas
+
+Quando houver sucesso no login, queremos que o usuário seja orientado por uma rota onde ele acesse uma o módulo de animais.
+Para isso, injetamos no `login.component.ts` o elemento `private router: Router`.
