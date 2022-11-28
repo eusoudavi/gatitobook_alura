@@ -1,10 +1,12 @@
 # Curso de Angula - GatitoBook
 
-_Node v18.12.1_
+## Versionamento do projeto
+
+_Node v18.12.1_ .
 
 _[Angular CLI](https://angular.io/cli)_
 
-### Back-end
+### Back end
 
 No curso será utilizado a API que já está disponível na pasta `.\angular_formularios-main\api`.
 
@@ -28,7 +30,7 @@ O servidor será iniciado na porta `localhost:3000`.
 
 Execute o comando `ng new gatitobook --strict` no terminal. Observe se o terminal está aberto na pasta onde deseja executar o projeto.
 
-**Esse repositório já foi iniciado com o Angular instalado**
+**Esse repositório já foi iniciado com o Angular instalado** .
 
 Neste curso, utilizaremos os poderosos recursos do Angular. Podemos deixar a nossa experiência de desenvolvimento ainda melhor com alguns recursos do VS Code.
 
@@ -38,20 +40,20 @@ Usaremos também o formatador de código [Prettier](https://prettier.io/). Para 
 
 1. Instale no nosso projeto utilizando o comando:
 
-```
+```powershell
 npm install --save-dev prettier
 ```
 
 2. Instale os seguintes pacotes de desenvolvimento:
 
-```
+```powershell
 npm install --save-dev tslint-config-prettier
 npm install --save-dev tslint-plugin-prettier
 ```
 
 3. No arquivo `tslint.json`, coloque a seguinte configuração no atributo `extends`:
 
-```
+```powershell
 "extends": ["tslint:recommended", "tslint-plugin-prettier", "tslint-config-prettier"]
 ```
 
@@ -61,13 +63,13 @@ npm install --save-dev tslint-plugin-prettier
 
 Vamos utilizar duas bibliotecas nesse projeto. Na pasta do projeto `./angula_formularios-main/gatitobook` vamos instalar essas bibliotecas com o comando
 
-```
+```powershell
 npm i bootstrap font-awesome
 ```
 
 Para utilizarmos essas biblioteca, vamos no arquivo `angular.json` e acrescentamos nas configurações de _style_ as seguintes informações:
 
-```
+```powershell
 "./node_modules/bootstrap/dist/css/bootstrap.min.css",
 "./node_modules/font-awesome/css/font-awesome.css"
 ```
@@ -76,15 +78,15 @@ Para utilizarmos essas biblioteca, vamos no arquivo `angular.json` e acrescentam
 
 Com o comando abaixo, criamos os módulos principais do front
 
-~~~~
+```powershell
 ng generate module home --routing
-~~~~
+```
 
 Com o comando abaixo, criamos os componentes do Angular para o nosso projeto:
 
-~~~~
+```powershell
 ng generate component home
-~~~~
+```
 
 Dessa forma, criamos uma estrutura dentro da pasta `./gatitobook/src/app/home` para desenvolvermos a página home da nossa aplicação.
 
@@ -98,7 +100,7 @@ Para que tenhamos o carregamento das páginas, apenas quando necessário, retira
 
 Como o objetivo é criar uma rota para a página home, no arquivo `app-routing.ts`, criamos a indicação da rota:
 
-~~~~typescript
+```typescript
 const routes: Routes = [
   {
     path: '',
@@ -110,7 +112,7 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((moduloRecebido) => moduloRecebido.HomeModule)
   }
 ];
-~~~~
+```
 
 Dessa forma, para acessar a página home, será criada uma rota exclusiva pra essa página. Consequentemente, precisamos criar as rotas da componente Home no arquivo `home-routing.module.ts`.
 
@@ -119,3 +121,12 @@ Dessa forma, para acessar a página home, será criada uma rota exclusiva pra es
 Para gerarmos o componente da página de Login, podemos executar o comando: `ng generate component home/login` ou `ng g c home/login`.
 
 Dessa forma já é criado o componente e atualizado o `home.module.ts` com a declaração desse novo componente.
+
+### Autenticação
+
+Em Ângular, o local correto para inidicar as regras de negócio é na classe de serviço.
+
+Assim, vamos criar primeiro o módulo de autenticação com o comando `ng generate module autenticacao`. Agora podemos criar a service com o comando `ng generate service autenticacao/autenticacao`.
+
+Na service, vamos criar um método que irá fazer um POST ao back-end com um JSON contendo usuário e senha.
+
