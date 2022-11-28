@@ -75,11 +75,13 @@ Para utilizarmos essas biblioteca, vamos no arquivo `angular.json` e acrescentam
 ### Criando feature module
 
 Com o comando abaixo, criamos os módulos principais do front
+
 ~~~~
 ng generate module home --routing
 ~~~~
 
 Com o comando abaixo, criamos os componentes do Angular para o nosso projeto:
+
 ~~~~
 ng generate component home
 ~~~~
@@ -111,3 +113,9 @@ const routes: Routes = [
 ~~~~
 
 Dessa forma, para acessar a página home, será criada uma rota exclusiva pra essa página. Consequentemente, precisamos criar as rotas da componente Home no arquivo `home-routing.module.ts`.
+
+## Página de Login
+
+Para gerarmos o componente da página de Login, podemos executar o comando: `ng generate component home/login` ou `ng g c home/login`.
+
+Dessa forma já é criado o componente e atualizado o `home.module.ts` com a declaração desse novo componente.
