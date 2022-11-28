@@ -90,3 +90,24 @@ Primeiramente foi criado os arquivos `home-routing.module.ts` onde tem as rotas 
 
 Depois, foi criado os componentes de CSS, HTML, TS e .SPEC.TS (para elaboração dos testes).
 
+## Ajuste de rotas - Lazy Loading
+
+Para que tenhamos o carregamento das páginas, apenas quando necessário, retiramos a importação do módulo do arquivo `app.module.ts`. Além disso, modificamos o `app.component.html` para indicar que o acesso a página Home, por exemplo, será feita através de uma roda.
+
+Como o objetivo é criar uma rota para a página home, no arquivo `app-routing.ts`, criamos a indicação da rota:
+
+~~~~typescript
+const routes: Routes = [
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then((moduloRecebido) => moduloRecebido.HomeModule)
+  }
+];
+~~~~
+
+Dessa forma, para acessar a página home, será criada uma rota exclusiva pra essa página. Consequentemente, precisamos criar as rotas da componente Home no arquivo `home-routing.module.ts`.
