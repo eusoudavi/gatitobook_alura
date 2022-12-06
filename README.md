@@ -139,7 +139,7 @@ Para isso, injetamos no `login.component.ts` o elemento `private router: Router`
 
 Quando fazemos o login em uma página construída pelo Angular, é enviado um token chamado JWT. Esse token pode ser encontrado através da aba _Network_ do prompt de comando do navegador.
 
-Na página (jwt.io)[https://jwt.io/], é possível fazer o debug do token.
+Na página [jwt.io](https://jwt.io/), é possível fazer o debug do token.
 
 Para manipularmos o token enviado no momento do login, precisamos instalar uma biblioteca auxiliar através do comando `npm install jwt-decode`.
 
