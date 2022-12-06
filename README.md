@@ -134,3 +134,13 @@ Na service, vamos criar um método que irá fazer um POST ao back-end com um JSO
 
 Quando houver sucesso no login, queremos que o usuário seja orientado por uma rota onde ele acesse uma o módulo de animais.
 Para isso, injetamos no `login.component.ts` o elemento `private router: Router`.
+
+## Manipulando token JWT
+
+Quando fazemos o login em uma página construída pelo Angular, é enviado um token chamado JWT. Esse token pode ser encontrado através da aba _Network_ do prompt de comando do navegador.
+
+Na página (jwt.io)[https://jwt.io/], é possível fazer o debug do token.
+
+Para manipularmos o token enviado no momento do login, precisamos instalar uma biblioteca auxiliar através do comando `npm install jwt-decode`.
+
+Com o comando `ng generate service autenticacao/token`, vamos criar um serviço para manipular os tokens.
