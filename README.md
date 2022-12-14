@@ -144,3 +144,9 @@ Na página [jwt.io](https://jwt.io/), é possível fazer o debug do token.
 Para manipularmos o token enviado no momento do login, precisamos instalar uma biblioteca auxiliar através do comando `npm install jwt-decode`.
 
 Com o comando `ng generate service autenticacao/token`, vamos criar um serviço para manipular os tokens.
+
+## Rota de Guarda
+
+O Angula cli tem uma ferramenta para proteger as rotas que os usuários farão através da página, impedindo, por exemplo, que determinado usuário, sem se autenticar previamente, entre em uma página restrita ou, se determinado usuário executar o logout dentro de uma página restrita, seja redirecionado para fora do ambiente restrito.
+
+Para isso, utilizamos o comando `ng generate guard autenticacao/autenticacao` para que o Angular cli crie os arquivos necessários. Como estamos trabalhando com o Lazy loading, vamos utilizar a opção CanLoad, quando for feita a geração da guarda.
