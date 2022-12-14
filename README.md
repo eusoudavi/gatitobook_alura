@@ -150,3 +150,9 @@ Com o comando `ng generate service autenticacao/token`, vamos criar um serviço 
 O Angula cli tem uma ferramenta para proteger as rotas que os usuários farão através da página, impedindo, por exemplo, que determinado usuário, sem se autenticar previamente, entre em uma página restrita ou, se determinado usuário executar o logout dentro de uma página restrita, seja redirecionado para fora do ambiente restrito.
 
 Para isso, utilizamos o comando `ng generate guard autenticacao/autenticacao` para que o Angular cli crie os arquivos necessários. Como estamos trabalhando com o Lazy loading, vamos utilizar a opção CanLoad, quando for feita a geração da guarda.
+
+## Interceptor
+
+Quando fazemos uma requisição, no animais service, por exemplo, criamos uma repetição de código para colocar o token dentro do header da requisição. Uma melhor forma de tratarmos isso é criarmos um interceptor.
+
+Para isso, usamos o código `ng generate interceptor autenticacao/autenticacao`. CUIDADO QUE O INTERCEPTOR NÃO TEM FORMA ABREVIADA.
